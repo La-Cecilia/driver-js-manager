@@ -1,3 +1,4 @@
+import type { ILocalSteps } from "@/models"
 import type { DriveStep } from "driver.js"
 
 export const globalSteps: DriveStep[] = [
@@ -37,10 +38,18 @@ export const globalSteps: DriveStep[] = [
     },
 ]
 
-export const localSteps = [
+export const localSteps: ILocalSteps[] = [
     {
         path: "/",
         steps: [
+            {
+                element: "#layout__post",
+                popover: {
+                    title: "Posts container",
+                    description:
+                        "This container is dedicated to displaying the most recent four uploaded posts. Its main function is to offer a concise and structured presentation of these posts for users to conveniently access.",
+                },
+            },
             {
                 element: "#heatmap",
                 popover: {
@@ -49,6 +58,33 @@ export const localSteps = [
                         "Step into our time-traveling heat map! Watch as the past comes to life through a visual calendar of post publication dates. This vibrant display lets you explore the history of our blog, showcasing when each exciting piece of content was unleashed onto the digital world. Get ready to embark on a journey through time and discover the rhythm of our posts!",
                 },
             },
+            {
+                element: "#heatmap__filters",
+                popover: {
+                    title: "Heat map filters",
+                    description:
+                        "This heatmap filter is designed to facilitate the visualization of posts based on years. With this feature, users can efficiently filter and display posts according to distinct year ranges, enabling them to gain insights into long-term trends and developments.",
+                },
+            },
         ],
     },
+    {
+        path: '/post',
+        steps: [
+            {
+                element: "#reader",
+                popover: {
+                    title: "Reader",
+                    description: "This component is designed to display the entire content of posts."
+                }
+            },
+            {
+                element: "#reader__copy",
+                popover: {
+                    title: "Copy",
+                    description: "This button allows to copy the post link with ease."
+                }
+            }
+        ]
+    }
 ]
