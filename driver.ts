@@ -1,6 +1,6 @@
-import "@/components/Driver/Driver.css"
 import { globalConfig } from "@/config"
 import type { ILocalSteps } from "@/models/"
+import "@/styles/Driver.css"
 import { getFromSessionStorage, setToSessionStorage } from "@/utils/"
 import { driver, type DriveStep, type Driver } from "driver.js"
 import "driver.js/dist/driver.css"
